@@ -1,0 +1,72 @@
+:root{
+    --barColor: #000000;
+    
+    /* Color Theme Swatches in Hex */
+    --primaryHex: #027373;
+    --secondaryHex: #038C7F;
+    --tertiaryHex: #A9D9D0;
+    --baseHex: #F2E7DC;
+    --textHex: #0D0D0D;
+
+    /* Color Theme Swatches in RGBA */
+    --primaryRGB: rgb(2, 114, 114);
+    --secondaryRGB: rgba(2, 140, 126);
+    --tertiaryRGB: rgba(169, 216, 208);
+    --baseRGB: rgba(242, 230, 220);
+    --textRGB: rgba(12, 12, 12, 1);
+
+    /* Color Theme Swatches in HSLA */
+    --primaryHSLA: hsla(180, 96, 22, 1);
+    --secondaryHSLA: hsla(174, 96, 28, 1);
+    --tertiaryHSLA: hsla(168, 38, 75, 1);
+    --baseHSLA: hsla(28, 46, 90, 1);
+    --textHSLA: hsla(0, 0, 5, 1);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap');
+
+body{ 
+    background: linear-gradient( 
+        45deg,  
+        var( --secondaryHex ), 
+        var( --primaryHex) 
+    );
+}
+
+.menuBtn{
+    display: flex;
+    width: fit-content;
+    padding: 10px;
+    color: var( --textHex );
+    border: 1px solid var( --tertiaryHex );
+    border-radius: 2px;
+    background-color: var( --tertiaryHex );
+    transition: 0.3s;
+}
+
+.menuBtn:hover{
+    border: 1px solid var( --baseHex );
+    background-color: var( --baseHex );
+    cursor: pointer;
+}
+
+.menuBtn > span {
+    margin: 0 0 0 5px;
+    text-transform: uppercase;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
+}
+
+.menuIcon {
+    display: inline-block;
+}
+
+.bar {
+    background-color: var( --barColor );
+    width: 25px;
+    height: 2px;
+}
+
+.bar:nth-child(2){
+    margin: 5px 0 5px 0;
+}
