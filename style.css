@@ -1,6 +1,7 @@
 :root{
     --barColor: #000000;
-    
+    --btnPadding: 8px;
+
     /* Color Theme Swatches in Hex */
     --primaryHex: #027373;
     --secondaryHex: #038C7F;
@@ -23,7 +24,7 @@
     --textHSLA: hsla(0, 0, 5, 1);
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&family=Ubuntu:wght@700&display=swap');
 
 body{ 
     background: linear-gradient( 
@@ -33,14 +34,73 @@ body{
     );
 }
 
+#levelOne {
+    border: 0.5px solid #eeeeee;
+    border-radius: 1px;
+    background-color: #FFFFFF;
+    width: fit-content;
+    padding: 6px;
+    border-radius: 2px;
+    position: absolute;
+    top: var( --btnPadding );
+}
+
+.hidden { 
+    -webkit-animation-name: cssHide;
+    -webkit-animation-duration: 0.5s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-fill-mode: forwards;
+}
+
+.hoverOver {
+    -webkit-animation-name: hoverSelection;
+    -webkit-animation-duration: 0.5s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-fill-mode: forwards;
+}
+
+.hoverOff {
+    -webkit-animation-name: hoverSelection;
+    -webkit-animation-duration: 0.5s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-fill-mode: backwards;
+}
+
+
+#levelOne > h2 {
+    margin: 0;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 2em;
+}
+
+#levelOne > ul {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.5em;
+    list-style:none;
+    margin: 0 0 0 0;
+    padding: 0;
+    text-transform: uppercase;
+}
+
+#backBtn {
+    cursor: pointer;
+    font-size: small;
+    text-transform: uppercase;
+    padding: 5px 0px;
+}
+
 .menuBtn{
     display: flex;
     width: fit-content;
-    padding: 10px;
+    padding: var( --btnPadding );
     color: var( --textHex );
-    border: 1px solid var( --tertiaryHex );
     border-radius: 2px;
+    border: 1px solid var( --tertiaryHex );
     background-color: var( --tertiaryHex );
+
     transition: 0.3s;
 }
 
@@ -69,4 +129,24 @@ body{
 
 .bar:nth-child(2){
     margin: 5px 0 5px 0;
+}
+
+/* Animations */
+
+@-webkit-keyframes hoverSelection {
+    from { 
+        margin: 0 0 0 0; 
+    }
+    to { 
+        margin: 0 0 0 15px;
+    }
+}
+
+@-webkit-keyframes cssHide {
+    from { 
+        opacity: 100; 
+    }
+    to { 
+        opacity: 0; 
+    }
 }
